@@ -16,17 +16,15 @@ public class ConsumoAPI {
             String urlCompleta = BASE_URL + "/" + endpoint;
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(urlCompleta))
-                    .header("Accept", "application/json")
-                    .GET()
                     .build();
 
             HttpResponse<String> response = HttpClient.newHttpClient()
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             //Conferir se o status code veio com erro
-            if (response.statusCode() != 200) {
-                throw new ApiException("API retornou código " + response.statusCode());
-            }
+//            if (response.statusCode() != 200) {
+//                throw new ApiException("API retornou código " + response.statusCode());
+//            }
 
             return response.body();
         } catch (IOException | InterruptedException e) {

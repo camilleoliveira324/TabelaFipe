@@ -2,6 +2,7 @@ package br.com.alura.TabelaFipe.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.apache.commons.lang3.StringUtils;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Marca {
@@ -28,5 +29,10 @@ public class Marca {
 
     public void setCodigoMarca(Long codigoMarca) {
         this.codigoMarca = codigoMarca;
+    }
+
+    @Override
+    public String toString() {
+        return "Cód: " + codigoMarca + " Descrição: " + StringUtils.capitalize(nomeMarca); //biblioteca Apache Commons
     }
 }
