@@ -2,14 +2,15 @@ package br.com.alura.TabelaFipe.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Anos {
 
-    @JsonAlias("codigo")
+    @JsonProperty("codigo")
     private String codigo;
 
-    @JsonAlias("nome")
+    @JsonProperty("nome")
     private String nomeAnoModelo;
 
     public Anos (){}
@@ -29,4 +30,11 @@ public class Anos {
     public void setNomeAnoModelo(String nomeAnoModelo) {
         this.nomeAnoModelo = nomeAnoModelo;
     }
+
+    @Override
+    public String toString() {
+        return "Cód:" + codigo + " Descrição: " + nomeAnoModelo;
+    }
+
+
 }

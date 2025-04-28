@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Valor {
     @JsonAlias("TipoVeiculo")
-    private String tipoVeiculo;
+    private Integer tipoVeiculo;
 
     @JsonAlias("Valor")
     private Double valor;
@@ -18,18 +18,18 @@ public class Valor {
     private Long ano;
 
     @JsonAlias("Modelo")
-    private Modelos modelo;
+    private String modelo;
 
     @JsonAlias("Combustível")
     private String combustivel;
 
     public Valor(){}
 
-    public String getTipoVeiculo() {
+    public Integer getTipoVeiculo() {
         return tipoVeiculo;
     }
 
-    public void setTipoVeiculo(String tipoVeiculo) {
+    public void setTipoVeiculo(Integer tipoVeiculo) {
         this.tipoVeiculo = tipoVeiculo;
     }
 
@@ -57,11 +57,11 @@ public class Valor {
         this.ano = ano;
     }
 
-    public Modelos getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(Modelos modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 

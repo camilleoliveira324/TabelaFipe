@@ -7,13 +7,18 @@ import org.apache.commons.lang3.StringUtils;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Marca {
 
-    @JsonAlias({"codigo", "id", "code"})
+    @JsonAlias({"nome", "brand", "marca"})
     private String nomeMarca;
 
-    @JsonAlias({"nome", "brand", "marca"})
-    private Long codigoMarca;
+    @JsonAlias({"codigo", "id", "code"})
+    private Integer codigoMarca;
 
     public Marca() {}
+
+    public Marca(String nomeMarca, String codigoMarca) {
+        this.nomeMarca = nomeMarca;
+        this.codigoMarca = Integer.parseInt(codigoMarca);
+    }
 
     public String getNomeMarca() {
         return nomeMarca;
@@ -23,16 +28,16 @@ public class Marca {
         this.nomeMarca = nomeMarca;
     }
 
-    public Long getCodigoMarca() {
+    public Integer getCodigoMarca() {
         return codigoMarca;
     }
 
-    public void setCodigoMarca(Long codigoMarca) {
-        this.codigoMarca = codigoMarca;
+    public void setCodigoMarca(String codigoMarca) {
+        this.codigoMarca = Integer.parseInt(codigoMarca);
     }
 
     @Override
     public String toString() {
-        return "Cód: " + codigoMarca + " Descrição: " + StringUtils.capitalize(nomeMarca); //biblioteca Apache Commons
+        return "Cód:" + codigoMarca + " Descrição: " + StringUtils.capitalize(nomeMarca); //biblioteca Apache Commons
     }
 }

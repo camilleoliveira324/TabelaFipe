@@ -2,6 +2,9 @@ package br.com.alura.TabelaFipe.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Modelos {
@@ -10,9 +13,14 @@ public class Modelos {
     private String nomeModelo;
 
     @JsonAlias("codigo")
-    private Long codigoModelo;
+    private Integer codigoModelo;
 
     public Modelos(){}
+
+    public Modelos(String nomeModelo, String codigoModelo) {
+        this.nomeModelo = nomeModelo;
+        this.codigoModelo = Integer.parseInt(codigoModelo);
+    }
 
     public String getNomeModelo() {
         return nomeModelo;
@@ -22,11 +30,16 @@ public class Modelos {
         this.nomeModelo = nomeModelo;
     }
 
-    public Long getCodigoModelo() {
+    public Integer getCodigoModelo() {
         return codigoModelo;
     }
 
-    public void setCodigoModelo(Long codigoModelo) {
-        this.codigoModelo = codigoModelo;
+    public void setCodigoModelo(String codigoModelo) {
+        this.codigoModelo = Integer.parseInt(codigoModelo);
+    }
+
+    @Override
+    public String toString() {
+        return "Cód:" + codigoModelo + " Descrição: " + nomeModelo;
     }
 }
