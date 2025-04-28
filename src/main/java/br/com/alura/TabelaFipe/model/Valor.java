@@ -9,18 +9,18 @@ public class Valor {
     private Integer tipoVeiculo;
 
     @JsonAlias("Valor")
-    private Double valor;
+    private String valor;
 
     @JsonAlias("Marca")
-    private Marca marca;
+    private String marca;
 
     @JsonAlias("AnoModelo")
-    private Long ano;
+    private Integer ano;
 
     @JsonAlias("Modelo")
     private String modelo;
 
-    @JsonAlias("Combustível")
+    @JsonAlias({"Combustível", "Combustivel"})
     private String combustivel;
 
     public Valor(){}
@@ -33,27 +33,27 @@ public class Valor {
         this.tipoVeiculo = tipoVeiculo;
     }
 
-    public Double getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
-    public Marca getMarca() {
+    public String getMarca() {
         return marca;
     }
 
-    public void setMarca(Marca marca) {
+    public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public Long getAno() {
+    public Integer getAno() {
         return ano;
     }
 
-    public void setAno(Long ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
 
@@ -71,5 +71,16 @@ public class Valor {
 
     public void setCombustivel(String combustivel) {
         this.combustivel = combustivel;
+    }
+
+    @Override
+    public String toString() {
+        return "Valor{" +
+                "valor=" + valor +
+                ", marca=" + marca +
+                ", ano=" + ano +
+                ", modelo='" + modelo + '\'' +
+                ", combustivel='" + combustivel + '\'' +
+                '}';
     }
 }

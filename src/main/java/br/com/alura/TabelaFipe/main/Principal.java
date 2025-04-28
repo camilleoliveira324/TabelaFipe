@@ -3,9 +3,11 @@ package br.com.alura.TabelaFipe.main;
 import br.com.alura.TabelaFipe.model.Anos;
 import br.com.alura.TabelaFipe.model.Marca;
 import br.com.alura.TabelaFipe.model.Modelos;
+import br.com.alura.TabelaFipe.model.Valor;
 import br.com.alura.TabelaFipe.service.ConsumoAPI;
 import br.com.alura.TabelaFipe.service.ConverterDados;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -77,13 +79,24 @@ public class Principal {
         Integer codigoModelo = sc.nextInt();
         sc.nextLine();
 
-        campo = "anos";
+        opcao += "/" + codigoModelo + "/anos";
         json = consumoAPI.obterDados(opcao);
-
-        List<Anos> anos = conversor.extrairModelosEAnos(json, campo, Anos.class);
-        anos.forEach(System.out::println);
+        List<Anos> anos = conversor.obterLista(json, Anos.class);
 
 
-        
+
+        List<Valor> valores = new ArrayList<>();
+
+        for (int i = 0; i < anos.size(); i++) {
+            String opcaoAno = opcao + "/" + anos.get(i).getCodigo();
+            json = consumoAPI.obterDados(opcaoAno);
+            Valor valor = conversor.obterDados(json, Valor.class);
+            valores.add(valor);
+        }
+
+        System.out.println("\n Todos os veiculos filtrados com avaliações por ano:");
+        valores.forEach(System.out::println);
+
+
     }
 }
