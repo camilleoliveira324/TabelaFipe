@@ -7,6 +7,15 @@
 
 ---
 
+## 🌟 **Agradecimentos e Créditos**
+
+Este projeto utiliza a **API FIPE** não-oficial desenvolvida por [Deivid Fortuna](https://github.com/deividfortuna).  
+🔗 **Documentação da API**: [https://deividfortuna.github.io/fipe/](https://deividfortuna.github.io/fipe/)  
+
+Muito obrigada ao autor por disponibilizar esse recurso gratuitamente à comunidade de desenvolvedores!  
+
+---
+
 ## 🛠️ Tecnologias e Habilidades Utilizadas  
 
 ### **Backend**  
