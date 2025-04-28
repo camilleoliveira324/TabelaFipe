@@ -1,7 +1,8 @@
 # 📊 Tabela Fipe - Consulta de Veículos  
 
-**Projeto de consulta à tabela FIPE (Fundação Instituto de Pesquisas Econômicas)**, desenvolvido em Java para buscar informações sobre marcas, modelos, anos e valores de veículos.  
+**Projeto de consulta à tabela FIPE (Fundação Instituto de Pesquisas Econômicas)**, desenvolvido em Java como desafio de conclusão do curso da Alura **- Java: Trabalhando com Lambdas, Streams e Spring -** para buscar informações sobre marcas, modelos, anos e valores de veículos.  
 
+🔗 **Curso Alura**: [Java: Trabalhando com Lambdas, Streams e Spring](https://cursos.alura.com.br/course/java-trabalhando-lambdas-streams-spring-framework)
 🔗 **GitHub**: [https://github.com/camilleoliveira324/TabelaFipe](https://github.com/camilleoliveira324/TabelaFipe)  
 
 ---
